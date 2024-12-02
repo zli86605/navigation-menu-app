@@ -1,0 +1,171 @@
+/* 导航栏容器 */
+.navbar {
+    position: relative;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: #3f434b;
+    padding: 10px 0;
+    background: linear-gradient(90deg, #bbcbe9, #4e7bc8);
+}
+/* 导航链接的聚焦样式 */
+.nav-item a:focus {
+    outline: 2px solid #007BFF;
+    outline-offset: 2px;
+  }
+/* 导航列表 */
+.nav-list {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    list-style-type: none;
+}
+
+/* 导航项 */
+.nav-item {
+    margin: 0 15px;
+    position: relative;
+}
+
+/* 导航链接 */
+.nav-item a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 8px 16px;
+    display: block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    position: relative;
+}
+
+/* 悬停效果 */
+.nav-item a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: #fff;
+    transition: width 0.3s ease;
+}
+
+.nav-item a:hover::after {
+    width: 100%;
+}
+
+.nav-item a:hover {
+    background-color: #4e7bc8;
+}
+
+.nav-item:hover {
+    cursor: pointer;
+}
+
+.nav-item.active a {
+    color: #007BFF;
+}
+
+/* 子菜单基础样式 */
+.submenu {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+/* 显示子菜单 */
+.submenu.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* 多级子菜单 */
+.submenu .submenu {
+    left: 100%;
+    top: 0;
+    transform: translateX(-10px);
+}
+
+.submenu .submenu.open {
+    transform: translateX(0);
+}
+
+/* 子菜单项 */
+.submenu li {
+    position: relative;
+}
+
+.submenu li a {
+    padding: 8px 16px;
+    display: block;
+    color: #868686;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.submenu li a:hover {
+    background-color: #f0f0f0;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        background-color: #ffffff;
+    }
+
+    .nav-item,
+    .nav-item a {
+        width: 100%;
+        padding: 12px 20px;
+        color: #000000;
+    }
+
+    .nav-item {
+        margin: 0;
+    }
+
+    /* 子菜单在移动端展开 */
+    .submenu {
+        position: static;
+        transform: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .submenu .submenu {
+        left: 0;
+        top: 0;
+        transform: none;
+    }
+
+    /* 调整导航链接样式 */
+    .nav-item a {
+        font-size: 18px;
+        padding: 15px 0;
+        color: #000000;
+        background-color: #ffffff;
+    }
+
+    .nav-item a:hover {
+        background-color: #f0f0f0;
+    }
+}

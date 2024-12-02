@@ -1,0 +1,56 @@
+.app {
+  text-align: center;
+}
+
+/* 定义主题变量 */
+.app.light {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --nav-bg-color: #3f434b;
+}
+
+.app.dark {
+  --bg-color: #1e1e1e;
+  --text-color: #ffffff;
+  --nav-bg-color: #333333;
+}
+
+/* 应用主题样式 */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* 导航栏使用主题颜色 */
+.navbar {
+  background-color: var(--nav-bg-color);
+}
+
+/* 主题切换按钮样式 */
+.theme-toggle-button {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background-color: transparent;
+  border: 2px solid var(--text-color);
+  color: var(--text-color);
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 5px;
+  z-index: 1001;
+}
+
+.theme-toggle-button:hover {
+  background-color: var(--text-color);
+  color: var(--bg-color);
+}
+
+/* 在移动端隐藏主题切换按钮 */
+@media (max-width: 768px) {
+  .theme-toggle-button {
+    display: none;
+  }
+}

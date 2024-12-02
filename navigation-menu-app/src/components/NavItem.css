@@ -1,0 +1,4 @@
+
+.nav-item a:focus {
+    outline: 2px solid #007BFF;
+  }

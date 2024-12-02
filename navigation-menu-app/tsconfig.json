@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "target": "ES6", // 指定 ECMAScript 目标版本
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // 指定要包含在编译中的库
+    "allowJs": true, // 允许编译 JavaScript 文件
+    "skipLibCheck": true, // 跳过库文件的类型检查
+    "esModuleInterop": true, // 允许与 CommonJS 模块进行互操作
+    "allowSyntheticDefaultImports": true, // 允许默认导入没有默认导出的模块
+    "strict": false, // 是否启用所有严格类型检查选项
+    "forceConsistentCasingInFileNames": true, // 强制文件名一致
+    "module": "ESNext", // 指定模块代码生成方式
+    "moduleResolution": "Node", // 模块解析策略
+    "resolveJsonModule": true, // 允许导入 JSON 文件
+    "isolatedModules": true, // 将每个文件作为单独的模块
+    "jsx": "react-jsx" // 指定 JSX 代码的处理方式
+  },
+  "include": ["src"] // 指定要包含的文件
+}
